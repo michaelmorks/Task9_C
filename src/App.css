@@ -3,58 +3,80 @@ body, html, #root {
   height: 100%;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
 }
 
 /* Page backgrounds */
-.login-page {
+.login-page, .signup-page {
   background: linear-gradient(135deg, #6b73ff, #000dff);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  transition: background 0.5s ease;
 }
 
-.dashboard-page {
+.dashboard-page, .home-page, .findquestions-page {
   background: linear-gradient(135deg, #ff7eb3, #ff758c);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  transition: background 0.5s ease;
 }
 
 /* Card styling */
 .card {
   background: white;
-  padding: 40px;
-  border-radius: 12px;
-  width: 300px;
+  padding: 50px 40px;
+  border-radius: 16px;
+  width: 350px;
+  max-width: 90%;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 40px rgba(0,0,0,0.3);
 }
 
 h1 {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   color: #333;
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
 /* Inputs */
 input {
   width: 100%;
-  padding: 12px;
-  margin: 10px 0;
+  padding: 14px;
+  margin: 12px 0;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: #6b73ff;
+  box-shadow: 0 0 10px rgba(107, 115, 255, 0.3);
+  outline: none;
 }
 
 /* Buttons */
 button {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
+  margin-top: 10px;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .login-btn {
@@ -64,6 +86,7 @@ button {
 
 .login-btn:hover {
   background: #000dff;
+  transform: scale(1.05);
 }
 
 .logout-btn {
@@ -73,4 +96,32 @@ button {
 
 .logout-btn:hover {
   background: #ff3a1a;
+  transform: scale(1.05);
+}
+
+/* Links as buttons */
+a button {
+  text-decoration: none;
+}
+
+/* Question list */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 15px;
+  transition: background 0.2s ease;
+}
+
+li:hover {
+  background: rgba(107, 115, 255, 0.1);
+  border-radius: 6px;
 }
